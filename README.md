@@ -1,1 +1,1 @@
-# odin-rock-paper-scissors
+This project asks for skills with basic Javascript.
