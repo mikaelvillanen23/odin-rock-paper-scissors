@@ -1,3 +1,6 @@
+let humanScore = 0;
+let computerScore = 0;
+
 /*
 define function for computer choice
   create var for computer choice
@@ -12,11 +15,11 @@ define function for computer choice
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3); //gives out 0, 1 or 2
   if (computerChoice === 0) {
-    return "Rock"
+    return "rock"
   } else if (computerChoice === 1) {
-    return "Paper"
+    return "paper"
   } else {
-    return "Scissors"
+    return "scissors"
   }
 }
 // console.log(getComputerChoice()); 
@@ -30,6 +33,79 @@ define function for human choice
 
 function getHumanChoice() {
   let humanChoice = prompt("Rock, Paper or Scissors? Please type your choice below!");
-  return humanChoice;
+  return humanChoice.toLowerCase();
 }
 // console.log(getHumanChoice());
+
+/*
+define function for a round of the game with two parameters
+  create var for computerChoice ("C")
+  create var for humanChoice ("H")
+    make prompt lowercase to make sure it fits the following conditionals
+  create round conditions
+    if H is rock and C is paper:
+      increment computerScore by 1
+      print "You lose! Paper beats Rock."
+    if H is rock and C is scissors:
+      increment humanScore by 1
+      print "You win! Rock beats Scissors."
+
+    if H is paper and C is scissors:
+      increment computerScore by 1
+      print "You lose! Scissors beats Paper."
+    if H is paper and C is rock:
+      increment humanScore by 1
+      print "You win! Paper beats Rock."
+
+    if H is scissors and C is rock:
+      increment computerScore by 1
+      print "You lose! Rock beats Scissors."
+    if H is scissors and C is paper:
+      increment humanScore by 1
+      print "You win! Scissors beats Paper."
+
+    if H and C are equal
+      print "It's a tie! Play again."
+      call self
+*/
+
+function playRound(computerChoice, humanChoice) {
+  // console.log(computerChoice);
+  // console.log(humanChoice);
+  switch(true) {
+    case (computerChoice === humanChoice):
+      console.log("It's a tie! Play again.");
+      break;
+    case (computerChoice === "paper") && (humanChoice === "rock"):
+      computerScore += 1;
+      console.log("You lose! Paper beats Rock.");
+      break;
+    case (computerChoice === "scissors") && (humanChoice === "rock"):
+      humanScore += 1;
+      console.log("You win! Rock beats Scissors.");
+      break;
+    case (computerChoice === "scissors") && (humanChoice === "paper"):
+      computerScore += 1;
+      console.log("You lose! Scissors beats Paper.");
+      break;
+    case (computerChoice === "rock") && (humanChoice === "paper"):
+      humanScore += 1;
+      console.log("You win! Paper beats Rock.");
+      break;
+    case (computerChoice === "rock") && (humanChoice === "scissors"):
+      computerScore += 1;
+      console.log("You lose! Rock beats Scissors.");
+      break;
+    case (computerChoice === "paper") && (humanChoice === "scissors"):
+      humanScore += 1;
+      console.log("You win! Scissors beats Paper.");
+      break;
+    default:
+      console.log("To play the game, please type only one of the three options without typos, thank you.");
+  }
+}
+
+const computerPlay = getComputerChoice();
+const humanPlay = getHumanChoice();
+
+playRound(computerPlay, humanPlay);
