@@ -1,3 +1,14 @@
+/*
+define function for computer choice
+  create var for computer choice
+  use rng to generate 3 outcomes: 1, 2, 3
+  condition:
+    if rng outcome is 1 assign rock to computer choice
+    if rng outcome is 2 assign paper to computer choice
+    if rng outcome is 3 assign scissors to computer choice
+  return computer choice
+*/
+
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3); //gives out 0, 1 or 2
   if (computerChoice === 0) {
@@ -8,15 +19,17 @@ function getComputerChoice() {
     return "Scissors"
   }
 }
-console.log(getComputerChoice());
+// console.log(getComputerChoice()); 
 
 /*
-define function for computer choice
-  create var for computer choice
-  use rng to generate 3 outcomes: 1, 2, 3
-  condition:
-    if rng outcome is 1 assign rock to computer choice
-    if rng outcome is 2 assign paper to computer choice
-    if rng outcome is 3 assign scissors to computer choice
-  return computer choice
-  */
+define function for human choice
+  create var for human choice
+  prompt for choice (choices: rock paper scissors)
+  return choice
+*/
+
+function getHumanChoice() {
+  let humanChoice = prompt("Rock, Paper or Scissors? Please type your choice below!");
+  return humanChoice;
+}
+// console.log(getHumanChoice());
