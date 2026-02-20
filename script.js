@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0;
 
 /*
 define function for computer choice
@@ -105,7 +106,51 @@ function playRound(computerChoice, humanChoice) {
   }
 }
 
-const computerPlay = getComputerChoice();
-const humanPlay = getHumanChoice();
+let computerPlay = getComputerChoice();
+let humanPlay = getHumanChoice();
 
-playRound(computerPlay, humanPlay);
+// playRound(computerPlay, humanPlay);
+
+/*
+define function for the whole game
+  create var for round counter
+  if round counter is fewer than 5:
+    call playRound
+    print game format (ends after 5 rounds) and current score
+  after 5 rounds:
+    if score is not even, declare winner
+    else print something like "Wow, that's an outlier of a result"
+  print "refresh page to play again"
+*/
+
+function playGame() {
+  if (roundsPlayed === 5) {
+    if (humanScore === computerScore) {
+      console.log("Wow, game ends with a tie! How boring.");
+    } else {
+      humanScore > computerScore ?
+        console.log(`You win the game ${humanScore} - ${computerScore}!`) :
+        console.log(`Computer wins the game ${humanScore} - ${computerScore}!`);
+    }
+    console.log("To start a new game, refresh this page.")
+  } else if (roundsPlayed === 4) {
+    playRound(computerPlay, humanPlay);
+    roundsPlayed += 1;
+    console.log(`Current score is: YOU ${humanScore} | Computer ${computerScore}.`);
+    console.log("");
+  } else {
+    playRound(computerPlay, humanPlay);
+    roundsPlayed += 1;
+    console.log(`Current score is: YOU ${humanScore} | Computer ${computerScore}.`);
+    console.log("");
+    computerPlay = getComputerChoice();
+    humanPlay = getHumanChoice();
+  }
+}
+
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
+playGame();
