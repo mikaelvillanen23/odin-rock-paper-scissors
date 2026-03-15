@@ -1,3 +1,5 @@
+--Console version, RPS v1.0--
+
 This project asked for skills with basic Javascript. Guidelines for different functions
 were provided.
 
@@ -22,3 +24,9 @@ Ideas for improvement after reviewing other people's solutions:
        
 
 
+-----------------
+--Graphic UI version, RPS v2.0--
+
+This revisit converts the previous dev console oriented version to a more user friendly one with a graphic UI. The assignment was to make use of javascript to dynamically change the page's html elements.
+
+This process was great practise for these newly learned concepts. It also provided a chance to refactor the old code with the previous ideas for improvement.

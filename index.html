@@ -4,17 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock-Paper-Scissors game</title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
 
   <body>
 
-    <h1>Rock Paper Scissors – a console game</h1>
-    <p>This game is played in your browser's developer console.</p>
-    <p>If you do not know how to access the console, take a look <a href="https://balsamiq.com/support/faqs/browser-console/" rel="noreferrer" target="_blank">here</a>.</p>
+    <h1>Rock Paper Scissors</h1>
+    <h4>It's you against the computer.</h4>
+    <h4>First one to win 5 rounds wins the game.</h4>
+    <h3 id="choiceHeading">Make your choice!</h3>
     
-    <button type="button" onclick="playGame(5)">Start game</button>
+    <button type="button" id="rockBtn">Rock</button>
+    <button type="button" id="paperBtn">Paper</button>
+    <button type="button" id="scissorsBtn">Scissors</button>
+
+    <div>
+      Your choice: <span id="playerChoice">?</span> | 
+      Computer's choice: <span id="cpuChoice">?</span>
+    </div>
+    <div id="results"></div>
+    <h3>Current score is:
+      You - <span id="playerScore">0</span> |
+      Computer - <span id="cpuScore">0</span>
+    </h3>
+    <div id="endMessage"></div>
+
     
     <script src="./script.js"></script>
 
   </body>
 </html>
+
+<!-- onclick="playGame(5)" -->
